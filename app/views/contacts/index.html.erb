@@ -1,0 +1,49 @@
+<p style="color: green"><%= notice %></p>
+<%= turbo_page_requires_reload %>
+<%= turbo_frame_tag "modal" do %>
+
+  <h1>Contacts</h1>
+  <div class="contact-search-wrapper">
+    <div class="new-contact">
+      <%= link_to "Add contact", new_contact_path, data: { turbo_frame: "modal" }, class: "add-button" %>
+    </div>
+
+    <div class="search-form">
+      <%= form_tag contacts_path, method: :get do |f| %>
+        <%= text_field_tag "query", params[:query], placeholder: "Search name, email, or phone...", class: "input input-bordered w-full max-w-xs my-5" %>
+        <%= submit_tag "Search", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
+
+  <table id="contacts" class="table table-bordered">
+    <thead style="color: green">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if @contacts.any? %>
+        <% @contacts.each do |contact| %>
+          <tr>
+            <td><%= contact.name %></td>
+            <td><%= contact.email %></td>
+            <td><%= contact.phone_number %></td>
+            <td><%= link_to "Edit", edit_contact_path(contact), data: { turbo_frame: "modal" }, class: "edit-btn" %></td>
+            <td><%= button_to "Destroy", contact, method: :delete, class: 'delete-btn' %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <div class="result-not-found">
+          <h2>No contacts found for "<%= params[:query] %>"</h2>
+        </div>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= will_paginate @contacts %>

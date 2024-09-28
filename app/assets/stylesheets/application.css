@@ -1,0 +1,162 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/*---------Table-------*/
+.contact-search-wrapper{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+
+.table-container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#contacts {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+#contacts thead {
+  background-color: #f2f2f2;
+  color: green;
+}
+
+#contacts th {
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+}
+
+#contacts tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#contacts tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+#contacts td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#contacts td a {
+  text-decoration: none;
+  color: blue;
+}
+
+#contacts td a:hover {
+  text-decoration: underline;
+}
+
+/*------Modal----*/
+.modal {
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  padding: 2em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
+}
+
+
+
+.modal form input{
+  width: 97%;
+  height: 30px;
+}
+
+.modal form label{
+  margin-bottom: 8px;
+}
+
+.modal form > div{
+  margin-bottom: 20px;
+}
+
+.modal form input[type="submit"]{
+  width: 120px;
+  background: #2640fe;
+  color: #fff;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+/*-----------button--------*/
+.add-button, .delete-btn, .edit-btn{
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #2640fe;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+}
+
+.delete-btn{
+  background-color: red;
+  border: none;
+}
+
+.edit-btn{
+  background-color: yellow;
+}
+
+.cancel-button {
+  background-color: #1530ff;
+  font-size: 12px;
+  color: white;
+  padding: 8px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  text-decoration: none;
+  position: absolute;
+  right: 40px;
+  bottom: 67px;
+  font-size: 15px;
+  background: red;
+}
+
+.search-form input{
+  height: 30px;
+}
+
+.search-form input[type="submit"]{
+  width: 120px;
+  background: #2640fe;
+  color: #fff;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+}
