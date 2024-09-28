@@ -5,12 +5,12 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby version
   3.1.4
 
-* Rails version
+## Rails version
  7.2.1
 
-* Run rails server
+## Run rails server:
   rails s
   
